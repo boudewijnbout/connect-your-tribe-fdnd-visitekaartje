@@ -1,4 +1,4 @@
-# Visitekaartje met API
+# Persoonlijk visitekaartje met API
 ![Schermafbeelding Homepagina](assets/images/screenshot-homepage.png)
 
 Dit project omvat een nieuw persoonlijk visitekaartje, waarbij de data afkomstig is van een API.
