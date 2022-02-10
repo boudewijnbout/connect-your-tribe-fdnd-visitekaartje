@@ -55,7 +55,7 @@ main {
 # Left Page Column
 --------------------------------------------------------------*/
 .left-page-column {
-    background-image: url('../assets/MicrosoftTeams-image (3).png');
+    background-image: url('../assets/images/MicrosoftTeams-image (3).png');
     background-size: cover;
     /*padding: 4rem 4rem;*/
     padding: 2rem 2rem;
@@ -112,7 +112,7 @@ main {
 # Right Page Column
 --------------------------------------------------------------*/
 .right-page-column {
-    background-image: url('../assets/MicrosoftTeams-image (4).png');
+    background-image: url('../assets/images/MicrosoftTeams-image (4).png');
     background-size: cover;
     background-position: center left;
     display: none;
