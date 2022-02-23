@@ -24,34 +24,6 @@ body {
     background-color: var(--secondary-bg);
 }
 
-/* Heading Levels */
-h1 {
-    font-family: 'Rubik', sans-serif;
-    font-size: 2.5rem;
-    display: flex;
-    align-items: center;
-    margin-top: -1.5rem;
-    margin-left: 2rem;
-}
-
-h1::before {
-    content: '';
-    display: block;
-    background-color: #F7C117;
-    width: 4px;
-    height: 25px;
-    margin-right: .5rem;
-}
-
-h1::after {
-    content: '';
-    display: block;
-    background-color: #F7C117;
-    width: 4px;
-    height: 25px;
-    margin-left: .5rem;
-}
-
 /* All Paragraphs */
 p {
     font-family: 'Inter', sans-serif;
@@ -73,12 +45,41 @@ main {
 --------------------------------------------------------------*/
 
 .personal-card {
-    width: 50vw;
-    height: 50vh;
+    width: 90vw;
+    height: auto;
     background-color: #fff;
     border-radius: 5px;
-    display: grid;
-    grid-template-columns: 1fr auto;
+    /* display: grid; */
+    /* grid-template-columns: 1fr auto; */
+}
+
+/* Personal Card Name Title */
+.personal-card h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    margin-top: -1rem;
+    /* margin-left: 1rem; */
+    margin-left: 1rem;
+}
+
+.personal-card h1::before {
+    content: '';
+    display: block;
+    background-color: #F7C117;
+    width: 4px;
+    height: 25px;
+    margin-right: .5rem;
+}
+
+.personal-card h1::after {
+    content: '';
+    display: block;
+    background-color: #F7C117;
+    width: 4px;
+    height: 25px;
+    margin-left: .5rem;
 }
 
 /* Personal Card Article */
@@ -107,27 +108,55 @@ main {
 
 /* Personal Card Paragraphs */
 .personal-card p {
-    max-width: 75%;
+    /* max-width: 75%;   */
     margin-bottom: 1rem;
 }
 
 /*--------------------------------------------------------------
-# 
+# Sidebar Social Icons
 --------------------------------------------------------------*/
 aside {
     background-color: #F7C117;
-    padding: 1rem .75rem;
+    /* padding: 1rem .75rem; */
     display: flex;
-    flex-direction: column;
+    padding: 0 2rem;
 }
 
 aside img {
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     width: 1.6rem;
     height: auto;
     transition: all 200ms;
+    margin: .25rem 1rem 0 0;
 }
 
 aside img:hover {
     transform: skewX(10deg) skewY(10deg);
+}
+
+/*--------------------------------------------------------------
+# Media Query's
+--------------------------------------------------------------*/
+
+@media (min-width: 30rem) {
+    .personal-card {
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    aside {
+        padding: .75rem .75rem;
+        flex-direction: column;
+    }
+
+    aside img {
+        margin: 0 0 1rem 0;
+    }
+}
+
+@media (min-width: 48rem) {
+    .personal-card {
+        width: 50vw;
+        height: auto;
+    }
 }
