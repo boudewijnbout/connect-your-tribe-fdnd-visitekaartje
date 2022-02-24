@@ -1,21 +1,36 @@
-// Fetch API data
 const memberId = 18;
 const apiUrl = "https://tribe.api.fdnd.nl/v1/member";
 
+// Personal Card
+const nameTitle = document.querySelector("#name-title");
+const bio = document.querySelector("article");
+const bioText = document.querySelector("article p");
+const waveIcon = document.querySelector("article p span");
+
+// Preloader
+const preLoaderWrapper = document.querySelector(".preloader-wrapper");
+
+// Fetch API data
 fetch(apiUrl)
   .then((res) => {
-    return res.json();
-  })
-  .then((data) => {
-    const boudewijn = data.data.find((student) => student.memberId === 18);
 
-    renderApiData(boudewijn);
+    if (res.status >= 200 && res.status <= 299) {
+      preLoaderWrapper.classList.add("hide");
+      return res.json();
+    } else {
+      preLoaderWrapper.classList.add("hide");
+    }
   })
-  .catch(function (error) {
-    console.log("Api can't connect");
-  });
 
-// Render API Data
-const renderApiData = (boudewijn) => {
-  document.getElementById("name-title").innerHTML = `${boudewijn.name} ${boudewijn.surname}`;
-};
+  // Filter data to specific person
+  .then((res) => {
+    const boudewijnData = res.data.find((student) => student.memberId === 18);
+
+    // Put data into HTML
+
+    // Title
+    nameTitle.textContent = `${boudewijnData.name} ${boudewijnData.surname}`;
+
+    // Bio
+    bioText.textContent = boudewijnData.bio;
+  })
