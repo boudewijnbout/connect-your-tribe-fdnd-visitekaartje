@@ -38,7 +38,7 @@ Dit project bestaat uit één enkele pagina waarop een visitekaartje wordt getoo
 
 ## 🔗 Handige links
 
-[Wiki](https://github.com/boudewijnbout/the-startup-chipper.dev/wiki)
+[Wiki](https://github.com/boudewijnbout/connect-your-tribe-fdnd-visitekaartje/wiki)
 
 ## 📖 Bronnen
 [HTML5](https://www.w3schools.com/html/)
