@@ -2,7 +2,7 @@ const memberId = 18;
 const apiUrl = "https://tribe.api.fdnd.nl/v1/member";
 
 // Personal Card
-const nameTitle = document.querySelector("#name-title");
+const nameTitle = document.querySelector("h1");
 const bio = document.querySelector("article");
 const bioText = document.querySelector("article p");
 const waveIcon = document.querySelector("article p span");
@@ -13,9 +13,8 @@ const preLoaderWrapper = document.querySelector(".preloader-wrapper");
 // Fetch API data
 fetch(apiUrl)
   .then((res) => {
-
     if (res.status >= 200 && res.status <= 299) {
-      preLoaderWrapper.classList.add("hide");
+      preLoaderWrapper.classList.add("hide");    
       return res.json();
     } else {
       preLoaderWrapper.classList.add("hide");

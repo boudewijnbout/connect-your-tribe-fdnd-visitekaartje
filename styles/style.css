@@ -3,31 +3,33 @@
 --------------------------------------------------------------*/
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Variables */
 :root {
-    --primary-bg: #262626;
-    --secondary-bg: #F8F4F1;
+  --primary-bg: #262626;
+  --secondary-bg: #f8f4f1;
+  --accent-bg: #f7c117;
 }
 
 body {
-    background-color: var(--secondary-bg);
+  background-color: var(--secondary-bg);
 }
 
 /* All Paragraphs */
 p {
-    font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -35,61 +37,51 @@ p {
 --------------------------------------------------------------*/
 
 .preloader-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: var(--primary-bg);
-    width: 100%;
-    height: 100%;
-    transition: all 1.5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-bg);
+  width: 100%;
+  height: 100%;
+  transition: all 1.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .preloader-wrapper.hide {
-    opacity: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .preloader {
-    width: 48px;
-    height: 48px;
-    border: 3px solid red;
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-  } 
+  width: 4rem;
+  height: 4rem;
+  border: 3px solid var(--secondary-bg);
+  border-radius: 50%;
+  border-bottom-color: var(--accent-bg);
+  animation: rotation 1s linear infinite;
+  display: block;
+}
 
-  .preloader {
-    content: '';  
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    border: 3px solid transparent;
-    border-bottom-color: var(--secondary-bg);
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  } 
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /*--------------------------------------------------------------
 # Main Content
 --------------------------------------------------------------*/
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 /*--------------------------------------------------------------
@@ -97,87 +89,91 @@ main {
 --------------------------------------------------------------*/
 
 .personal-card {
-    width: 90vw;
-    height: auto;
-    background-color: #fff;
-    border-radius: 5px;
+  width: 90vw;
+  height: auto;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 /* Personal Card Name Title */
 .personal-card h1 {
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
-    margin-top: -1rem;
-    margin-left: 1rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  margin-top: -1rem;
+  margin-left: 1rem;
 }
 
 .personal-card h1::before {
-    content: '';
-    display: block;
-    background-color: #F7C117;
-    width: 4px;
-    height: 25px;
-    margin-right: .5rem;
+  content: "";
+  display: block;
+  background-color: var(--accent-bg);
+  width: 4px;
+  height: 25px;
+  margin-right: 0.5rem;
 }
 
 .personal-card h1::after {
-    content: '';
-    display: block;
-    background-color: #F7C117;
-    width: 4px;
-    height: 25px;
-    margin-left: .5rem;
+  content: "";
+  display: block;
+  background-color: var(--accent-bg);
+  width: 4px;
+  height: 25px;
+  margin-left: 0.5rem;
 }
 
 /* Personal Card Article */
 .personal-card article {
-    padding: 1rem 2rem;
+  padding: 1rem 2rem;
 }
 
 /* Personal Card Wave Icon */
 .personal-card span {
-    font-size: 1.75rem;
-    animation: waveRotate 3s infinite;
-    display: inline-block;
-    margin-right: .5rem;
+  font-size: 1.75rem;
+  animation: waveRotate 3s infinite;
+  display: inline-block;
+  margin-right: 0.5rem;
 }
 
 /* Personal Card Wave Icon Animation */
 @keyframes waveRotate {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    50% {
-        transform: rotate(30deg);
-    }
+  50% {
+    transform: rotate(30deg);
+  }
 }
 
 /* Personal Card Paragraphs */
 .personal-card p {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 /*--------------------------------------------------------------
 # Sidebar Social Icons
 --------------------------------------------------------------*/
 aside {
-    background-color: #F7C117;
-    display: flex;
-    padding: 0 2rem;
+  background-color: var(--accent-bg);
+  display: flex;
+  padding: 0 2rem;
+}
+
+aside ul {
+  list-style: none;
 }
 
 aside img {
-    width: 1.6rem;
-    height: auto;
-    transition: all 200ms;
-    margin: .25rem 1rem 0 0;
+  width: 1.6rem;
+  height: auto;
+  transition: all 200ms;
+  margin: 0.25rem 1rem 0 0;
 }
 
 aside img:hover {
-    transform: skewX(10deg) skewY(10deg);
+  transform: skewX(10deg) skewY(10deg);
 }
 
 /*--------------------------------------------------------------
@@ -185,24 +181,24 @@ aside img:hover {
 --------------------------------------------------------------*/
 
 @media (min-width: 30rem) {
-    .personal-card {
-        display: grid;
-        grid-template-columns: 1fr auto;
-    }
+  .personal-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
 
-    aside {
-        padding: .75rem .75rem;
-        flex-direction: column;
-    }
+  aside {
+    padding: 0.75rem 0.75rem;
+    flex-direction: column;
+  }
 
-    aside img {
-        margin: 0 0 1rem 0;
-    }
+  aside img {
+    margin: 0 0 1rem 0;
+  }
 }
 
 @media (min-width: 48rem) {
-    .personal-card {
-        width: 50vw;
-        height: auto;
-    }
+  .personal-card {
+    width: 50vw;
+    height: auto;
+  }
 }
